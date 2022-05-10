@@ -15,19 +15,27 @@ public class C3_Array_StreamOrnekleri {
         // kullanabilmek icin donusum yapilmalidir
 
         Integer arr1 [] ={1,5,-5,6,12,-8,9,3,4};
-
-
+        int arr2 [] ={1,5,-5,6,12,-8,9,3,4};
+        System.out.println("S1 --> "+listeleArray(arr1));
+        System.out.println("S2 --> "+arrayTopla(arr2));
+        System.out.println("S3 --> ");
+        arrayOrtalama(arr2);
     }
     //S1: arrayin elemanlarini bir liste yazdiralim
-
-
+    public static List<Integer> listeleArray(Integer[] arr1) {
+        return Arrays.stream(arr1).collect(Collectors.toList());
+    }
 
     //S2: Arrayin elemanlarini toplamini bulalim
-
-
+    public static int arrayTopla(int[] arr1) {
+        //return Arrays.stream(arr1).reduce(0,(x,y)->x+y);
+        return Arrays.stream(arr1).sum();
+    }
 
     // S3: Array in elemanlarinin ortalamasini bulalim yazdir
-
+    public static void arrayOrtalama(int[] arr) {
+        Arrays.stream(arr).average().ifPresent(System.out::println);
+    }
 
 
 

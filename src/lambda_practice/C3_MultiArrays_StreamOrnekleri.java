@@ -15,21 +15,22 @@ public class C3_MultiArrays_StreamOrnekleri {
         String arr[][] = {
                 {"Elma", "Muz"},
                 {"Portakal", "Cilek", "Limon"},
-                {"Havuc","Erik"}
+                {"Havuc", "Erik"}
         };
-
+        //System.out.println(Arrays.toString(arrToList(arr)));
 
     }
-    // S1 : tum elemanlari list yapayim
 
+    // S1 : tum elemanlari list yapayim
+    public static List<String[]> arrToList(String[][] arr) {
+        return Arrays.stream(arr).collect(Collectors.toList());
+    }
 
 
     // S2: E ile baslayan elemanlari double (elmaelma) olarak yazdiralim
 
 
-
     // S3: E ile baslayan elemanlari liste olarak yazdiralim
-
 
 
     //S4 : k ile bitenlerin sonuna '*' ekleyelim
