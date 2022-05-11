@@ -20,6 +20,12 @@ public class C3_Array_StreamOrnekleri {
         System.out.println("S2 --> "+arrayTopla(arr2));
         System.out.println("S3 --> ");
         arrayOrtalama(arr2);
+        System.out.println("S4 --> ");
+        arrayBuyuk(arr2);
+
+
+
+
     }
     //S1: arrayin elemanlarini bir liste yazdiralim
     public static List<Integer> listeleArray(Integer[] arr1) {
@@ -38,7 +44,10 @@ public class C3_Array_StreamOrnekleri {
     }
 
 
-
+    // S4: Array in en büyük elemanını bulalim
+    public static void arrayBuyuk(int[] arr) {
+        Arrays.stream(arr).reduce(Math::max).ifPresent(System.out::println);
+    }
 
 
 }

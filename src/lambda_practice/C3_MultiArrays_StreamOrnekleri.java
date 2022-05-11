@@ -17,23 +17,33 @@ public class C3_MultiArrays_StreamOrnekleri {
                 {"Portakal", "Cilek", "Limon"},
                 {"Havuc", "Erik"}
         };
-        //System.out.println(Arrays.toString(arrToList(arr)));
+        System.out.println(arrToList(arr));
+        //System.out.println(eBaslayan(arr));
+
+        eBaslayan(arr);
+        yildizEkle(arr);
 
     }
 
     // S1 : tum elemanlari list yapayim
-    public static List<String[]> arrToList(String[][] arr) {
-        return Arrays.stream(arr).collect(Collectors.toList());
+    public static List<String> arrToList(String[][] arr) {
+        return Arrays.stream(arr).flatMap(t-> Arrays.stream(t)).collect(Collectors.toList());
     }
 
 
     // S2: E ile baslayan elemanlari double (elmaelma) olarak yazdiralim
-
+    public static void eBaslayan(String[][] arr) {
+       // return Arrays.stream(arr).flatMap(Arrays::stream).filter(t->t.startsWith("E")).map(t->t+t).collect(Collectors.toList());
+    Arrays.stream(arr).flatMap(Arrays::stream).filter(t->t.startsWith("E")).map(t->t+t).forEach(System.out::println);
+    }
 
     // S3: E ile baslayan elemanlari liste olarak yazdiralim
 
 
     //S4 : k ile bitenlerin sonuna '*' ekleyelim
-
+    public static void yildizEkle(String[][] arr) {
+        // return Arrays.stream(arr).flatMap(Arrays::stream).filter(t->t.startsWith("E")).map(t->t+t).collect(Collectors.toList());
+        Arrays.stream(arr).flatMap(Arrays::stream).filter(t->t.endsWith("k")).map(t->t+" * ").forEach(System.out::println);
+    }
 
 }
