@@ -23,7 +23,7 @@ public class C5_Method_Referance_String {
 
     // S1: Tum harfleri buyuk harf ile aralarinda bosluk birakarak yazdiralim
     private static void buyukHarf(List<String> l) {
-        l.stream().map(String::toUpperCase).forEach(t->System.out.print(t+" "));
+        l.stream().map(t->t.toUpperCase().split(" ")).forEach(t->System.out.print(t+" "));
     }
 
     //S2: Stringleri uzunluklarina gore siralayip yaziniz

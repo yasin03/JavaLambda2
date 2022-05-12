@@ -15,13 +15,13 @@ public class C4_Method_Refarance_Int {
     public static void main(String[] args) {
         List<Integer> intL= Arrays.asList(-2,-8,-5,0,2,5,6,7,15,6,8);
 
-        System.out.println("S1");
+        System.out.println("\nS1");
         tekYazdir(intL);
-        System.out.println("S2");
+        System.out.println("\nS2");
         ciftCarp(intL);
-        System.out.println("S3");
+        System.out.println("\nS3");
         negatifKareTopla(intL);
-        System.out.println("S4");
+        System.out.println("\nS4");
         pozitifKupMax(intL);
 
     }
@@ -29,7 +29,7 @@ public class C4_Method_Refarance_Int {
 
     // S1: tekleri aralarinda bir bosluk birakarak yazdiralim
     private static void tekYazdir(List<Integer> L) {
-        L.stream().filter(Methods::tekMi).forEach(t->System.out.print(t+" "));
+        L.stream().filter(Methods::tekMi).forEach(Methods::yazInteger);
     }
 
     // S2: ciftlein carpimini bulalim
