@@ -1,6 +1,9 @@
 package lambda_practice;
 
+import java.util.stream.Stream;
+
 public class C0_Lambda_Aciklamalar {
+
          /*
      ForEach:
      Stream içindeki veriyi tek tek tüketmekiçin oluşturulmuş bir yapıdır.
